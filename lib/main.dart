@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primaryColor: Color(0xff145C9E),
+          scaffoldBackgroundColor: Color(0xff1F1F1F)),
+      debugShowCheckedModeBanner: false,
       home: SignIn(),
     );
   }
