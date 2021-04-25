@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:messaging_app/helper/authenticate.dart';
 //import 'views/signin.dart';
-import 'views/signUp.dart';
+// import 'views/signUp.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xff145C9E),
           scaffoldBackgroundColor: Color(0xff1F1F1F)),
       debugShowCheckedModeBanner: false,
-      home: SignUp(),
+      home: Authenticate(),
     );
   }
 }

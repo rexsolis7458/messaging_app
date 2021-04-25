@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:messaging_app/model/user.dart';
+//import 'package:build_web_compilers/build_web_compilers.dart';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
