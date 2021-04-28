@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:messaging_app/helper/authenticate.dart';
 import 'package:messaging_app/services/auth.dart';
+import 'package:messaging_app/views/search.dart';
 
 class ChatRoom extends StatefulWidget {
   ChatRoom({Key key}) : super(key: key);
@@ -27,6 +28,7 @@ class _ChatRoomState extends State<ChatRoom> {
                   ));
             },
             child: Container(
+              color: Colors.grey,
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Icon(Icons.exit_to_app),
             ),
@@ -35,7 +37,14 @@ class _ChatRoomState extends State<ChatRoom> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Search(),
+            ),
+          );
+        },
       ),
     );
   }

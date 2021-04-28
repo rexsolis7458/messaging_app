@@ -32,14 +32,14 @@ class _SignInState extends State<SignIn> {
                   decoration: textFieldInputDecoration("Password"),
                 ),
                 SizedBox(
-                  height: 8.0,
+                  height: 9.0,
                 ),
                 Container(
                   alignment: Alignment.centerRight,
                   child: Container(
                     padding:
                         EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    child: Text("Forgot Passwod?", style: simpleTextStyle()),
+                    child: Text("Forgot Password?", style: simpleTextStyle()),
                   ),
                 ),
                 SizedBox(height: 8.0),
@@ -54,7 +54,7 @@ class _SignInState extends State<SignIn> {
                         const Color(0xff2A75BC),
                       ],
                     ),
-                    borderRadius: BorderRadius.circular(30.0),
+                    borderRadius: BorderRadius.circular(32.0),
                   ),
                   child: Text(
                     "Sign In",
