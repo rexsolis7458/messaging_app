@@ -5,16 +5,16 @@ import 'package:messaging_app/model/user.dart';
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Users _userFromFirebaseUser(User user) {
+  Users _userFromFirebaseUser(FirebaseUser user) {
     return user != null ? Users(userId: user.uid) : null;
   }
 
   Future signInWithEmailAndPassword(String email, String password) async {
     try {
-      UserCredential result = await _auth.signInWithEmailAndPassword(
+      AuthResult result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
-      User firebaseUser = result.user;
-      return _userFromFirebaseUser(firebaseUser);
+      FirebaseUser user = result.user;
+      return _userFromFirebaseUser(user);
     } catch (e) {
       print(e);
     }
@@ -22,10 +22,10 @@ class AuthMethods {
 
   Future signUpWithEmailAndPassword(String email, String password) async {
     try {
-      UserCredential result = await _auth.createUserWithEmailAndPassword(
+      AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
-      User firebaseUser = result.user;
-      return _userFromFirebaseUser(firebaseUser);
+      FirebaseUser user = result.user;
+      return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
     }
