@@ -93,6 +93,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  footer:
+    dependency: "direct main"
+    description:
+      name: footer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.3"
   fuchsia_remote_debug_protocol:
     dependency: transitive
     description: flutter
@@ -150,6 +157,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.1"
+  splashscreen:
+    dependency: "direct main"
+    description:
+      name: splashscreen
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.3.5"
   stack_trace:
     dependency: transitive
     description:
