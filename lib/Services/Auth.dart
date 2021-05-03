@@ -5,7 +5,7 @@ class AuthenticationService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // register
-  Future createUser(String userName, String email, String password) async {
+  Future createNewUser(String userName, String email, String password) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);

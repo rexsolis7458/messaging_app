@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messaging_app/register/register.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -21,8 +22,10 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 ElevatedButton(
-                    onPressed: () {},
-                    child: Text('SIGNUP'),
+                    onPressed: () {
+                      Register();
+                    },
+                    child: Text('SIGN UP'),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.blue,
                       padding:
