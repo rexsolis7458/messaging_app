@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "575349693224",
-    "project_id": "message-app-c3a28",
-    "storage_bucket": "message-app-c3a28.appspot.com"
+    "project_number": "398879768782",
+    "project_id": "messageapp-3f8a0",
+    "storage_bucket": "messageapp-3f8a0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:575349693224:android:fc9d3095fffa0ea89bce1d",
+        "mobilesdk_app_id": "1:398879768782:android:58ce3c77b95d82a14a909f",
         "android_client_info": {
           "package_name": "com.example.messaging_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "575349693224-k6j0nl8ooite87ff9mcgm3qtpc6fv93t.apps.googleusercontent.com",
+          "client_id": "398879768782-kc3rdvmdmvs7k8esjau47hkd0imoscvn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDVoHeGWM6L66umoIoq7lNbDj7i6cf-AUE"
+          "current_key": "AIzaSyDRoY5P5hSV2yfJ4H5tUhJO5v4De0uAGWY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "575349693224-k6j0nl8ooite87ff9mcgm3qtpc6fv93t.apps.googleusercontent.com",
+              "client_id": "398879768782-kc3rdvmdmvs7k8esjau47hkd0imoscvn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

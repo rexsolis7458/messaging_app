@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:messaging_app/Services/Auth.dart';
+import 'package:messaging_app/home.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -7,6 +8,7 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
+  bool isLoading = false;
   final _key = GlobalKey<FormState>();
 
   final AuthenticationService auth = AuthenticationService();
@@ -62,14 +64,14 @@ class RegisterState extends State<Register> {
                             return null;
                         },
                         decoration: InputDecoration(
-                            labelText: 'Name',
+                            labelText: 'Email',
                             labelStyle: TextStyle(
                               color: Colors.white,
                             )),
                       ),
                       SizedBox(height: 30),
                       TextFormField(
-                        controller: emailController,
+                        controller: passwordController,
                         validator: (value) {
                           if (value.isEmpty) {
                             return 'Password should not be empty';
@@ -104,17 +106,18 @@ class RegisterState extends State<Register> {
     );
   }
 
-  void createUser() async {
-    dynamic result = await auth.createNewUser(
-        nameController.text, emailController.text, passwordController.text);
-    if (result == null) {
-      print('Email is not valid');
-    } else {
-      print(result.toString());
-      nameController.clear();
-      passwordController.clear();
-      emailController.clear();
-      Navigator.pop(context);
+  createUser() {
+    if (_key.currentState.validate()) {
+      setState(() {
+        isLoading = true;
+      });
+      auth
+          .signUpwithEmailAngPassword(
+              emailController.text, passwordController.text)
+          .then((val) {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      });
     }
   }
 }

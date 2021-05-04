@@ -23,7 +23,10 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 ElevatedButton(
                     onPressed: () {
-                      Register();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Register()),
+                      );
                     },
                     child: Text('SIGN UP'),
                     style: ElevatedButton.styleFrom(

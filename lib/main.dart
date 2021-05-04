@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:messaging_app/home.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(MyApp());
