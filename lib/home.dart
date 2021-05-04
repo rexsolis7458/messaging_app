@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:messaging_app/register/register.dart';
+import 'package:messaging_app/login/login.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -38,7 +39,12 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.only(left: 5),
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
+                      );
+                    },
                     child: Text('LOGIN'),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.blue,
