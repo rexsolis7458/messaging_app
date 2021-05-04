@@ -9,6 +9,7 @@ class Register extends StatefulWidget {
 
 class RegisterState extends State<Register> {
   bool isLoading = false;
+  bool _isObscure = true;
   final _key = GlobalKey<FormState>();
 
   final AuthenticationService auth = AuthenticationService();
@@ -71,6 +72,7 @@ class RegisterState extends State<Register> {
                       ),
                       SizedBox(height: 30),
                       TextFormField(
+                        obscureText: _isObscure,
                         controller: passwordController,
                         validator: (value) {
                           if (value.isEmpty) {
@@ -80,6 +82,16 @@ class RegisterState extends State<Register> {
                         },
                         decoration: InputDecoration(
                             labelText: 'Password',
+                            suffixIcon: IconButton(
+                              icon: Icon(_isObscure
+                                  ? Icons.visibility
+                                  : Icons.visibility_off),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscure = !_isObscure;
+                                });
+                              },
+                            ),
                             labelStyle: TextStyle(
                               color: Colors.white,
                             )),

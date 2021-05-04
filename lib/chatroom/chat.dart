@@ -15,11 +15,11 @@ class ChatRoom extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.chat_bubble_outline),
-            title: Text("Chats"),
+            label: 'Chats',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            title: Text("Profile"),
+            label: 'Profile',
           ),
         ],
       ),

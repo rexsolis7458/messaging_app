@@ -11,6 +11,7 @@ class Login extends StatefulWidget {
 }
 
 class LoginState extends State<Login> {
+  bool _isObscure = true;
   final _key = GlobalKey<FormState>();
 
   final AuthenticationService auth = AuthenticationService();
@@ -58,8 +59,8 @@ class LoginState extends State<Login> {
                                 ),
                                 SizedBox(height: 30),
                                 TextFormField(
+                                    obscureText: _isObscure,
                                     controller: passwordController,
-                                    obscureText: true,
                                     validator: (value) {
                                       if (value.isEmpty) {
                                         return 'Password cannot be empty';
@@ -68,6 +69,16 @@ class LoginState extends State<Login> {
                                     },
                                     decoration: InputDecoration(
                                         labelText: 'Password',
+                                        suffixIcon: IconButton(
+                                          icon: Icon(_isObscure
+                                              ? Icons.visibility
+                                              : Icons.visibility_off),
+                                          onPressed: () {
+                                            setState(() {
+                                              _isObscure = !_isObscure;
+                                            });
+                                          },
+                                        ),
                                         labelStyle:
                                             TextStyle(color: Colors.white)),
                                     style: TextStyle(color: Colors.white)),
@@ -93,6 +104,9 @@ class LoginState extends State<Login> {
                                         onPressed: () {
                                           if (_key.currentState.validate()) {
                                             signInUser();
+                                          } else {
+                                            return Text(
+                                                'Your password or email is incorrect');
                                           }
                                         }),
                                   ],
