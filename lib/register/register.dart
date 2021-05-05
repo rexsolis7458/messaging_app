@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:messaging_app/Services/Auth.dart';
+import 'package:messaging_app/Services/firebase.dart';
 import 'package:messaging_app/home.dart';
+
+final usersRef = FirebaseFirestore.instance.collection('users');
 
 class Register extends StatefulWidget {
   @override
@@ -8,6 +12,20 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
+  void initState() {
+    getUsers();
+    super.initState();
+  }
+
+  getUsers() {
+    usersRef.get().then((QuerySnapshot snapshot) {
+      snapshot.docs.forEach((DocumentSnapshot doc) {
+        print(doc.data);
+        print(doc.exists);
+      });
+    });
+  }
+
   bool isLoading = false;
   bool _isObscure = true;
   final _key = GlobalKey<FormState>();
@@ -101,9 +119,15 @@ class RegisterState extends State<Register> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
-                              onPressed: () {
-                                if (_key.currentState.validate()) {
+                              onPressed: () async {
+                                try {
                                   createUser();
+                                  userSetup(
+                                      nameController.text,
+                                      emailController.text,
+                                      passwordController.text);
+                                } catch (e) {
+                                  print(e.toString());
                                 }
                               },
                               child: Text('Sign Up'))
