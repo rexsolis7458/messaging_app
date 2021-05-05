@@ -12,20 +12,6 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
-  void initState() {
-    getUsers();
-    super.initState();
-  }
-
-  getUsers() {
-    usersRef.get().then((QuerySnapshot snapshot) {
-      snapshot.docs.forEach((DocumentSnapshot doc) {
-        print(doc.data);
-        print(doc.exists);
-      });
-    });
-  }
-
   bool isLoading = false;
   bool _isObscure = true;
   final _key = GlobalKey<FormState>();
